@@ -39,7 +39,7 @@ class MyModel extends Eloquent
 }
 ```
 
-If you don't set a value `$sortable['sort_field']` the package will assume that your order column name will be named `order_column`.
+If you don't set a value `$sortable['sort_field']` the package will assume that your order column name will be named `sort_field`.
 
 If you don't set a value `$sortable['sort_when_creating']` the package will automatically assign the highest order number to a new model;
 
@@ -47,13 +47,13 @@ Assuming that the db-table for `MyModel` is empty:
 
 ```php
 $myModel = new MyModel();
-$myModel->save(); // order_column for this record will be set to 1
+$myModel->save(); // sort_field for this record will be set to 1
 
 $myModel = new MyModel();
-$myModel->save(); // order_column for this record will be set to 2
+$myModel->save(); // sort_field for this record will be set to 2
 
 $myModel = new MyModel();
-$myModel->save(); // order_column for this record will be set to 3
+$myModel->save(); // sort_field for this record will be set to 3
 
 ```
 You can also move a model:
