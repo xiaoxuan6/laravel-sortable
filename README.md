@@ -23,9 +23,10 @@ To add sortable behaviour to your model you must:
 ### Example
 
 ```php
-James\Sortable\SortableTrait
+James\Sortable\SortableTrait;
+use James\Sortable\Sortable;
 
-class MyModel extends Eloquent
+class MyModel extends Eloquent implements Sortable
 {
 
     use SortableTrait;

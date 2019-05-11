@@ -10,7 +10,7 @@ namespace James\Sortable;
 
 trait SortableTrait
 {
-    public static function bootSortableTrait()
+    protected static function bootSortableTrait()
     {
         static::creating(function($model){
             if($model->shouldSortWhenCreating())
@@ -49,7 +49,7 @@ trait SortableTrait
 
     public function move($type = 'up')
     {
-        switch (strtolower($type))
+        switch (strtolower(trim($type)))
         {
             case 'up':
                 $this->moveUp();
@@ -70,7 +70,7 @@ trait SortableTrait
         return $this;
     }
 
-    public function moveUp()
+    protected function moveUp()
     {
         $filed = $this->getSortColumn();
 
@@ -83,10 +83,10 @@ trait SortableTrait
             return $this;
         }
 
-        return $this->swapOrderWithModel($swapWithModel);
+        return $this->swapFieldModel($swapWithModel);
     }
 
-    public function moveDown()
+    protected function moveDown()
     {
         $filed = $this->getSortColumn();
 
@@ -99,10 +99,10 @@ trait SortableTrait
             return $this;
         }
 
-        return $this->swapOrderWithModel($swapWithModel);
+        return $this->swapFieldModel($swapWithModel);
     }
 
-    public function moveToStart()
+    protected function moveToStart()
     {
         $filed = $this->getSortColumn();
         $firstModel = $this->buildSortQuery()
@@ -113,10 +113,10 @@ trait SortableTrait
             return $this;
         }
 
-        return $this->swapOrderWithModel($firstModel);
+        return $this->swapFieldModel($firstModel);
     }
 
-    public function moveToEnd()
+    protected function moveToEnd()
     {
         $filed = $this->getSortColumn();
         $endModel = $this->buildSortQuery()
@@ -127,10 +127,10 @@ trait SortableTrait
             return $this;
         }
 
-        return $this->swapOrderWithModel($endModel);
+        return $this->swapFieldModel($endModel);
     }
 
-    public function swapOrderWithModel($otherModel)
+    protected function swapFieldModel($otherModel)
     {
         $filed = $this->getSortColumn();
         $oldOrderOfOtherModel = $otherModel->$filed;
