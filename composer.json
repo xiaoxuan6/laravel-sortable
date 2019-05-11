@@ -1,0 +1,26 @@
+{
+    "name": "james.xue/laravel-sortable",
+    "description": "Sortable behaviour for eloquent models",
+    "type": "library",
+    "keywords":
+    [
+        "sort",
+        "sortable",
+        "eloquent",
+        "model",
+        "laravel",
+        "behaviour"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "james.xue",
+            "email": "1527736751@qq.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "James\\Sortable\\": "src/"
+        }
+    }
+}
