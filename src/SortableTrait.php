@@ -29,7 +29,7 @@ trait SortableTrait
 
     public function getSortNumber(): int
     {
-        return $this->buildSortQuery()->max($this->getSortColumn());
+        return (int) $this->buildSortQuery()->max($this->getSortColumn());
     }
 
     public function getSortColumn(): string

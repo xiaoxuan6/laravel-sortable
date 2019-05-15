@@ -18,12 +18,13 @@ composer require laravel-sortable
 
 To add sortable behaviour to your model you must:
 1. Use the trait `James\Sortable\SortableTrait;`.
+   Use the trait `use James\Sortable\Sortable`;
 2. Optionally specify which column will be used as the order column. The default is `sort_field`.
 
 ### Example
 
 ```php
-James\Sortable\SortableTrait;
+use James\Sortable\SortableTrait;
 use James\Sortable\Sortable;
 
 class MyModel extends Eloquent implements Sortable
@@ -62,7 +63,7 @@ You can also move a model:
 ```php
 
 $myModel = new MyModel();
-$myModel->where('id', $id)->move('up'); // up、down、top、end
+$myModel->where('id', $id)->first()->move('up'); // up、down、top、end
 ```
 
 
