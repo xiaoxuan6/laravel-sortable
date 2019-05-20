@@ -11,14 +11,15 @@ The value of the order column of a new record of a model is determined by the ma
 This package can be installed through Composer.
 
 ```
-composer require laravel-sortable
+composer require james.xue/laravel-sortable
 ```
 
 ## Usage
 
 To add sortable behaviour to your model you must:
-1. Use the trait `James\Sortable\SortableTrait;`.
-   Use the trait `use James\Sortable\Sortable`;
+1. Use the trait `James\Sortable\SortableTrait;`;
+
+   Use the trait `James\Sortable\Sortable`;
 2. Optionally specify which column will be used as the order column. The default is `sort_field`.
 
 ### Example
