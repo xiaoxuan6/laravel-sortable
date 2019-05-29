@@ -18,6 +18,10 @@
             "email": "1527736751@qq.com"
         }
     ],
+    "require": {
+        "php": ">=7.0.0",
+        "laravel/framework": "5.4.*"
+    },
     "autoload": {
         "psr-4": {
             "James\\Sortable\\": "src/"
